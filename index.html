@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discord.gg/</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 450px;
+      height: auto;
+      border: 2px solid #ffffff;
+      border-radius: 30px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #ffffff;
+      text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff;
+      letter-spacing: 2px;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 3em;
+      color: #ffffff;
+      text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff;
+      letter-spacing: 3.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img src="https://cdn.discordapp.com/attachments/1368505472503517254/1388035769440145508/download.jpg?ex=685f848b&is=685e330b&hm=1a5549e5b8b93c44d755b9a8ad9f8971c395c291ba7463fe392cdce1e2ddeb66&" alt="Discord Image">
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.discordapp.com/attachments/1382482155711496262/1388032435794481183/2022_-_.m4a?ex=685f8171&is=685e2ff1&hm=f51074887383c1c8df4928be9d4eb38b21335b3cb85abfc87e390eb12a921af2&" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="info" id="ip-info">
+    <strong>IP: <span id="ip"></span></strong><br>
+    <strong>Location:</strong> <span id="location"></span>
+  </div>
+
+  <div class="text">Discord.gg/yRBDYbUeGJ</div>
+
+  <script>
+    // فتح رابط تلقائي بعد ثانيتين
+    setTimeout(() => {
+      window.open("https://guns.lol/ldq", "_blank");
+    }, 2000);
+  </script>
+
+  <script>
+    // جلب معلومات IP
+    fetch('https://ipinfo.io/json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip').textContent = data.ip;
+        document.getElementById('location').textContent = `${data.city}, ${data.country}`;
+      });
+  </script>
+</body>
+</html>
