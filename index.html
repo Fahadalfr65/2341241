@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,22 +8,51 @@
     body {
       margin: 0;
       padding: 0;
-      background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
-      background-size: cover;
+      background: black;
       font-family: 'Courier New', Courier, monospace;
-      color: #ffffff;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       flex-direction: column;
       text-align: center;
+      overflow: hidden;
+    }
+
+    /* Splash screen */
+    #splash {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeOut 1s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    #splash img {
+      width: 400px;
+      border-radius: 20px;
+    }
+
+    /* Main screen */
+    #main {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+      background-size: cover;
     }
 
     .image-container img {
       width: 450px;
-      height: auto;
-      border: 2px solid #ffffff;
+      border: 2px solid white;
       border-radius: 30px;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     }
@@ -31,46 +60,81 @@
     .info {
       margin-top: 20px;
       font-size: 1.5em;
-      color: #ffffff;
-      text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff;
+      text-shadow: 0 0 8px white, 0 0 15px white, 0 0 25px white;
       letter-spacing: 2px;
     }
 
     .text {
       margin-top: 20px;
       font-size: 3em;
-      color: #ffffff;
-      text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff;
+      background: linear-gradient(270deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00ab, #ff0000);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 5s linear infinite;
       letter-spacing: 3.5px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 25px;
+      font-size: 1em;
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+      border: 2px solid white;
+      border-radius: 15px;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+
+    @keyframes rainbowText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="image-container">
-    <img src="https://cdn.discordapp.com/attachments/1368505472503517254/1388035769440145508/download.jpg?ex=685f848b&is=685e330b&hm=1a5549e5b8b93c44d755b9a8ad9f8971c395c291ba7463fe392cdce1e2ddeb66&" alt="Discord Image">
+  <!-- Splash screen with image -->
+  <div id="splash">
+    <img src="https://j.top4top.io/p_3465dmi9j1.jpg" alt="splash">
   </div>
 
-  <audio autoplay loop>
-    <source src="https://cdn.discordapp.com/attachments/1382482155711496262/1388032435794481183/2022_-_.m4a?ex=685f8171&is=685e2ff1&hm=f51074887383c1c8df4928be9d4eb38b21335b3cb85abfc87e390eb12a921af2&" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Main Screen -->
+  <div id="main">
+    <div class="image-container">
+      <img src="https://cdn.discordapp.com/attachments/1368505472503517254/1388035769440145508/download.jpg?ex=685f848b&is=685e330b&hm=1a5549e5b8b93c44d755b9a8ad9f8971c395c291ba7463fe392cdce1e2ddeb66&" alt="Discord Image">
+    </div>
 
-  <div class="info" id="ip-info">
-    <strong>IP: <span id="ip"></span></strong><br>
-    <strong>Location:</strong> <span id="location"></span>
+    <audio autoplay loop>
+      <source src="https://cdn.discordapp.com/attachments/1361773811955007729/1361773889251967017/Falcon_Rp.mp4?ex=685f8f03&is=685e3d83&hm=03892a59dcc6fd7285e90986213f458a7d6ff635bd575e35fafb69ea09fb5c39&" type="audio/mpeg">
+    </audio>
+
+    <div class="info" id="ip-info">
+      <strong>IP: <span id="ip"></span></strong><br>
+      <strong>Location:</strong> <span id="location"></span>
+    </div>
+
+    <div class="text">𝗗𝗶𝘀𝗰𝗼𝗿𝗱.𝗴𝗴/𝘆𝗥𝗕𝗗𝗬𝗯𝗨𝗲𝗚𝗝</div>
+
+    <button onclick="copyLink()">Copy The guns.lol </button>
   </div>
-
-  <div class="text">Discord.gg/yRBDYbUeGJ</div>
 
   <script>
-    // فتح رابط تلقائي بعد ثانيتين
+    // إظهار الصفحة الرئيسية بعد 3 ثواني
     setTimeout(() => {
-      window.open("https://guns.lol/ldq", "_blank");
+      document.getElementById('splash').style.display = 'none';
+      document.getElementById('main').style.display = 'flex';
     }, 2000);
-  </script>
 
-  <script>
     // جلب معلومات IP
     fetch('https://ipinfo.io/json')
       .then(response => response.json())
@@ -78,6 +142,15 @@
         document.getElementById('ip').textContent = data.ip;
         document.getElementById('location').textContent = `${data.city}, ${data.country}`;
       });
+
+    // نسخ رابط الديسكورد
+    function copyLink() {
+      const link = "https://guns.lol/ldq";
+      navigator.clipboard.writeText(link).then(() => {
+        alert(" تم نسخ !");
+      });
+    }
   </script>
+
 </body>
 </html>
