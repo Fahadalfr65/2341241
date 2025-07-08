@@ -2,153 +2,117 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>discord.gg/</title>
+  <title>Bo M6er</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: black;
-      font-family: 'Courier New', Courier, monospace;
+      background-color: black;
       color: white;
+      font-family: 'Courier New', monospace;
+      font-size: 1.4em;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      flex-direction: column;
-      text-align: center;
-      overflow: hidden;
     }
 
-    /* Splash screen */
-    #splash {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: fadeOut 1s ease-out forwards;
-      animation-delay: 1s;
+    #console {
+      white-space: pre-wrap;
+      text-align: left;
     }
 
-    #splash img {
-      width: 400px;
-      border-radius: 20px;
+    .red {
+      color: red;
     }
 
-    /* Main screen */
-    #main {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
-      background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
-      background-size: cover;
+    .gray {
+      color: #ffffff;
     }
 
-    .image-container img {
-      width: 450px;
-      border: 2px solid white;
-      border-radius: 30px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .info {
-      margin-top: 20px;
-      font-size: 1.5em;
-      text-shadow: 0 0 8px white, 0 0 15px white, 0 0 25px white;
-      letter-spacing: 2px;
-    }
-
-    .text {
-      margin-top: 20px;
-      font-size: 3em;
-      background: linear-gradient(270deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00ab, #ff0000);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowText 5s linear infinite;
-      letter-spacing: 3.5px;
-    }
-
-    button {
-      margin-top: 25px;
-      padding: 10px 25px;
-      font-size: 1em;
-      background-color: rgba(255,255,255,0.1);
-      color: white;
-      border: 2px solid white;
-      border-radius: 15px;
-      cursor: pointer;
-      backdrop-filter: blur(5px);
-    }
-
-    @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
+    .line {
+      display: block;
     }
   </style>
 </head>
 <body>
+  <div id="console"></div>
 
-  <!-- Splash screen with image -->
-  <div id="splash">
-    <img src="https://cdn.discordapp.com/attachments/1280791961808146472/1359184756583174537/728b271b8f1ef52a.gif?ex=6860afb2&is=685f5e32&hm=b5ebf70407b72e7359c1cfe301edf4ff0ecc6631ae96c45267e69e1dbc4608e8&" alt="splash">
-  </div>
-
-  <!-- Main Screen -->
-  <div id="main">
-    <div class="image-container">
-      <img src="https://cdn.discordapp.com/attachments/1382482155711496262/1388446515722457149/Screenshot_2025-06-27_083336.png?ex=68610315&is=685fb195&hm=e10bde45007f49efd78ee41b9f3b8d904e7e330aa6a4aafbdd053c204a5f6299&" alt="Discord Image">
-    </div>
-
-    <audio autoplay loop>
-      <source src="https://cdn.discordapp.com/attachments/1278776110498447423/1388450059309547590/12_-.mp4?ex=68610662&is=685fb4e2&hm=dcb49f279e232d02d02722adbf7a9fb14d9f4ba4722b0aac8573e11ff782a659&" type="audio/mpeg">
-    </audio>
-
-<div class="info" id="ip-info">
-  <strong>Your IP: <span id="ip"></span></strong><br>
-  <strong>Location:</strong> <span id="location"></span>
-</div>
-
-
-    <div class="text">𝗗𝗶𝘀𝗰𝗼𝗿𝗱.𝗴𝗴/𝘆𝗥𝗕𝗗𝗬𝗯𝗨𝗲𝗚𝗝</div>
+  <audio autoplay loop>
+    <source src="https://cdn.discordapp.com/attachments/1363501952087887923/1389935589331304559/0908_11.mp4?ex=686d0564&is=686bb3e4&hm=bf9c0941e27041b2809a78f213e92950c0ff8e7b34e1ea6e6f44ce1dc26268ee&" type="audio/mpeg">
+  </audio>
 
   <script>
-    // إظهار الصفحة الرئيسية بعد 3 ثواني
-    setTimeout(() => {
-      document.getElementById('splash').style.display = 'none';
-      document.getElementById('main').style.display = 'flex';
-    }, 2000);
-
-    // جلب معلومات IP
-    fetch('https://ipinfo.io/json')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('ip').textContent = data.ip;
-        document.getElementById('location').textContent = `${data.city}, ${data.country}`;
-      });
-
-    // نسخ رابط الديسكورد
-    function copyLink() {
-      const link = "https://guns.lol/ldq";
-      navigator.clipboard.writeText(link).then(() => {
-        alert(" تم نسخ !");
-      });
-    }
+    window.onload = () => {
+      window.open("https://discord.gg/DbTBT65t5Q", "_blank");
+      window.open("https://discord.gg/DbTBT65t5Q", "_blank");
+      window.open("https://discord.gg/DbTBT65t5Q", "_blank");
+      window.open("https://discord.gg/DbTBT65t5Q", "_blank");
+    };
   </script>
 
+  <script>
+    const lines = [
+      { text: '[+] AL-Qrni Is Now Into Your System...', class: '' },
+      { text: '[+] Dear admin', class: '' },
+      { text: '[+] Your anti cheat Is So SLow', class: '' },
+      { text: '[+] AL-Qrni  Discord.gg/DbTBT65t5Q', class: 'red' },
+      { text: '[+] Your IP Loading...', class: '' }
+    ];
+
+    const consoleEl = document.getElementById("console");
+    let lineIndex = 0;
+    let charIndex = 0;
+    let span;
+
+    function typeLine() {
+      if (lineIndex < lines.length) {
+        if (charIndex === 0) {
+          span = document.createElement("span");
+          span.className = `line ${lines[lineIndex].class}`;
+          consoleEl.appendChild(span);
+        }
+
+        const currentText = lines[lineIndex].text;
+        if (charIndex < currentText.length) {
+          span.textContent += currentText[charIndex];
+          charIndex++;
+          setTimeout(typeLine, 50);
+        } else {
+          charIndex = 0;
+          lineIndex++;
+          setTimeout(typeLine, 400);
+        }
+      } else {
+        fetch('https://ipinfo.io/json')
+          .then(response => response.json())
+          .then(data => {
+            printIP(`[+] Your IP: ${data.ip}`);
+          })
+          .catch(() => {
+            printIP('[+] Your IP: Unable to fetch');
+          });
+      }
+    }
+
+    function printIP(ipText) {
+      let idx = 0;
+      const ipSpan = document.createElement("span");
+      ipSpan.className = "line gray";
+      consoleEl.appendChild(ipSpan);
+
+      function typeChar() {
+        if (idx < ipText.length) {
+          ipSpan.textContent += ipText[idx];
+          idx++;
+          setTimeout(typeChar, 50);
+        }
+      }
+
+      typeChar();
+    }
+
+    typeLine();
+  </script>
 </body>
 </html>
